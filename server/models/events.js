@@ -10,7 +10,11 @@ const EventSchema= new Schema({
     description:{
         type:String, 
         required:true 
-    }, 
+    },  
+    eventdate:{
+        type:Date, 
+        required:true
+    },
     mode: {
         type: String, 
         required: true 
