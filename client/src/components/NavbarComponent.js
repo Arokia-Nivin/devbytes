@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {Navbar,Nav,Container} from "react-bootstrap";
 
 function NavbarComponent() {
@@ -6,13 +7,13 @@ function NavbarComponent() {
         <div className="NavbarComponent">
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
               <Container>
-              <Navbar.Brand href="#home">Code-club</Navbar.Brand>
+              <Navbar.Brand><NavLink style={{ textDecoration: "none", color: "white" }} to="/">Code-club</NavLink></Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="navbar-links">
-                  <Nav.Link  href="#events">Events</Nav.Link>
-                  <Nav.Link  href="#projects">Projects</Nav.Link>
-                  <Nav.Link href="#Contact Us">Contact Us</Nav.Link>
+                  <Nav.Link><NavLink style={{ textDecoration: "none", color: "white" }} to="/events">Events</NavLink></Nav.Link>
+                  <Nav.Link><NavLink style={{ textDecoration: "none", color: "white" }} to="/projects">Projects</NavLink></Nav.Link>
+                  <Nav.Link><NavLink style={{ textDecoration: "none", color: "white" }} to="/contact">Contact</NavLink></Nav.Link>
                 </Nav>
               </Navbar.Collapse>
               </Container>
