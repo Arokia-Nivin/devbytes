@@ -6,7 +6,7 @@ class Day extends Component {
         const { day, r } = this.props;
 
         return (
-            <div className="cont">
+            <div className="cont col">
                 {r===0?day:day.format("DD")}
             </div>
         )

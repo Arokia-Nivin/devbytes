@@ -6,7 +6,7 @@ export function getMonth(month = dayjs().month()) {
   
   const firstDayOfTheMonth = dayjs(new Date(year, month, 1)).day();
   let currentMonthCount = 1 - firstDayOfTheMonth;
-  let daysMatrix = [['S','M','T','W','T','F','S']];
+  let daysMatrix = [['S ','M ','T ','W ','T ','F ','S ']];
 
   for(let row=0;row<5;row++) {
       let rows = []
