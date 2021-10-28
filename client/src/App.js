@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Calendar from './components/calendarComponet/Calendar';
 import NavbarComponent from './components/NavbarComponent';
 import ProjectComponent from './components/ProjectComponent';
+import FooterComponent from './components/calendarComponet/FooterComponent';
 
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
           <Route exact path="/events" component={Calendar}/>
           <Route exact path="/projects" component={ProjectComponent}/>
         </div>
+        <FooterComponent/>
       </React.Fragment>
     );
   }
