@@ -41,26 +41,30 @@ class Calendar extends Component {
         const { month } = this.state;
         //Iterate over rows in calendar
         const calendar = month.map((row, rowIndex) =>
-            ( <div key={rowIndex}>
+            ( <div className="row" key={rowIndex}>
                 {row.map((day, colIndex) => { //iterate over dates in calendar
                     return <Day r={rowIndex} day={day} key={colIndex} />;
                 })}
             </div> )
         )
-        console.log(calendar);
         return calendar;
     }
 
 
     render() {
         return (
-            <div className="calendar-container">
-                <div className="calendar-header">
-                    <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
-                    <button onClick={this.decMonthIndex}>prev</button>
-                    <button onClick={this.incMonthIndex}>next</button>
+            <div className="row" style={{ margin: "0 auto" }} >
+                <div className="calendar-container col-lg-4 col-md-6 col-sm-12 me-5">
+                    <div className="calendar-header">
+                        <button onClick={this.decMonthIndex}>{"<"}</button>
+                        <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
+                        <button onClick={this.incMonthIndex}>{">"}</button>
+                    </div>
+                    {this.renderCalendar()}
                 </div>
-                {this.renderCalendar()}
+                <div className="events-container col-lg-7 col-md-8 col-sm-12" style={{marginTop: "20px"}}>
+                    <h3>Click on dates to view events</h3>
+                </div>
             </div>
         )
     }
