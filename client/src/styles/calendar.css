@@ -1,8 +1,19 @@
 .calendar-container {
-    margin: 50px auto;
+    
+    background-color: #fff;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+    padding: 20px;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-around;
 }
 
 .cont {
-    display: inline-block;
-    padding: 10px;
+    
+    padding: 8px;
+    text-align: center;
 }
