@@ -1,0 +1,18 @@
+.FooterComponent{
+    background-color: rgb(48, 46, 46);
+    color: white;
+    padding: 10px;
+    padding: 50px;
+    /* padding-bottom: 50px; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .footer-items{
+    background-position: center;
+    background-size: contain;
+  }
+  .white-border{
+    border-right: 2px solid thistle;
+  }
