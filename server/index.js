@@ -1,9 +1,9 @@
 const express=require("express"); 
 const app=express();
-
+const keys=require("./keys"); 
 
 const mongoose=require("mongoose"); 
-mongoose.connect("mongodb+srv://devbytes:devbytes@cluster0.hcx7q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"); 
+mongoose.connect(keys.MONGOURI); 
 const Event=require("./models/events"); 
 
 app.use(express.urlencoded({extended:true})); 
@@ -11,8 +11,14 @@ app.get("/",(req,res)=>{
     res.send("<h1>devbyts</h1>");
 })
 
-app.get("/api/events/dates",(req,res)=>{
-    res.send("dates will be sent ");  
+app.get("/api/events/dates", async(req,res)=>{
+    try{
+        const events= await Event.find({}, {"eventdate":1});
+        res.send(events); //dates will be sent 
+    }
+    catch(err) {
+        res.status(500).send(err);
+    }
 })
 
 
@@ -34,7 +40,7 @@ app.get("/api/events/:date", async (req,res)=>{
     else 
     {
         //incorrect request body 
-        res.status(400).send("not a valid date");
+        res.status(400).send("Invalid Date");
     }
     
   
