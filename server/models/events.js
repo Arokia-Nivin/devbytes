@@ -16,7 +16,7 @@ const EventSchema= new Schema({
         required:true
     },
     noofdays:{
-        type:Number ,
+        type:Number,
         required:true,
     }, 
     location:{

@@ -55,6 +55,7 @@ router.get("/project/:id", async(req,res)=>{
 //in frontend we have to show the form using react dom
 router.post("/events", async(req,res) =>{
     req.body; 
+    //save in db 
     res.redirect("/admin/events"); //frontend route 
 })
 
