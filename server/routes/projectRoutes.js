@@ -15,4 +15,15 @@ router.get("/", async (req,res)=>{
     }
 })
 
+router.get("/:id",async(req,res)=>{
+    try{
+        const project=await Project.findById(id); 
+        res.send({project});
+    }
+    catch(err)
+    {
+        res.status(500).send(err);
+    }
+})
+
 module.exports=router; 

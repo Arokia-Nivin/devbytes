@@ -3,6 +3,7 @@ const router=express.Router();
 const Event=require("../models/events"); 
 const Project=require("../models/projects"); 
 
+//api/admin;
 router.get("/",(req,res)=>{
     res.send("I am admin");
 })
