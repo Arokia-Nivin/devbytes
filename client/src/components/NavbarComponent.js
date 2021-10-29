@@ -8,7 +8,7 @@ function NavbarComponent() {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
         <Navbar.Brand><NavLink style={{ textDecoration: "none", color: "white" }} to="/">Code-club</NavLink></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto"></Nav>
           <Nav className="justify-content-end">

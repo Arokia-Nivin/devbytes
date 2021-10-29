@@ -3,13 +3,19 @@
     color: white;
     padding: 10px;
     padding: 50px;
-    /* padding-bottom: 50px; */
     margin-top: 100px;
   }
   .footer-items{
     background-position: center;
     background-size: contain;
+    text-align: center;
   }
-  .white-border{
-    border-right: 2px solid thistle;
+  @media (min-width: 720px){
+    .white-border{
+      border-right: 2px solid thistle;
+    }
+  }
+  .footer-elements{
+   top: 50%;                         
+   transform: translate(0, 10%)
   }

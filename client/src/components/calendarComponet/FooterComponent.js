@@ -1,5 +1,4 @@
 import React from 'react'
-import {Navbar,Nav,Container} from "react-bootstrap";
 import '../../styles/Footer.css';
 
 function FooterComponent() {
@@ -7,14 +6,14 @@ function FooterComponent() {
         <div className="FooterComponent">
             <div className="container">
                 <div className="row footer-items">
-                    <div className="col-md-3 col-sm-6 white-border footer-inst-name">
+                    <div className="col-md-3 col-sm-6 white-border footer-elements">
                         <h4>Sri Sairam Engineering College</h4>
                     </div>
-                    <div className="col-md-3 col-sm-6 white-border">
+                    <div className="col-md-3 col-sm-6 white-border footer-elements">
                         <h4>Address</h4>
                         <a href="#address"><p>Sai Leo Nagar,West Tambaram Poonthandalam, Village, Chennai, Tamil Nadu 602109</p></a>
                     </div>
-                    <div className="col-md-3 col-sm-6 white-border">
+                    <div className="col-md-3 col-sm-6 white-border footer-elements">
                         <h4>Contact Us</h4>
                         <ul className="list-unstyled">
                             <li>lorem ipsum - 1234567890</li>
