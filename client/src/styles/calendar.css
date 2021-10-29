@@ -58,7 +58,22 @@
     .event-cont {
         width: 100%;
     }
-}   
+} 
+.details-link {
+    color: black;
+    text-decoration: none;
+}
+.details-link:hover {
+    color: rgb(163, 163, 200);
+}
+
+
+.event-detail-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+ 
 
 .event-detail-container {
     display: flex;
@@ -73,6 +88,11 @@
 }
 img.img {
     border-radius: 20px;
+}
+
+.links {
+    color: #000;
+    text-decoration: none;
 }
 
 

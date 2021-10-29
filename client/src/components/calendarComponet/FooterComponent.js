@@ -1,5 +1,4 @@
 import React from 'react'
-import {Navbar,Nav,Container} from "react-bootstrap";
 import '../../styles/Footer.css';
 
 function FooterComponent() {
@@ -25,9 +24,9 @@ function FooterComponent() {
                         </ul>
                     </div>
                     <div className="col-md-3 col-sm-6">
-                        <a href="#facebook"><img src="https://img.icons8.com/color/48/000000/facebook.png"/></a>
-                        <a href="#instagram"><img src="https://img.icons8.com/color/48/000000/instagram-new.png"/></a>
-                        <a href="#linkedin"><img src="https://img.icons8.com/fluency/48/000000/linkedin.png"/></a>
+                        <a href="#facebook"><img alt="fb" src="https://img.icons8.com/color/48/000000/facebook.png"/></a>
+                        <a href="#instagram"><img alt="insta" src="https://img.icons8.com/color/48/000000/instagram-new.png"/></a>
+                        <a href="#linkedin"><img alt="linkedin" src="https://img.icons8.com/fluency/48/000000/linkedin.png"/></a>
                         
                     </div>
                 </div>
