@@ -18,12 +18,24 @@ const EventSchema= new Schema({
     mode: {
         type: String, 
         required: true 
+        //enum
     } ,
     registrationformurl:{
         type:String,
         required: true 
+    },
+    whatsappgrouplink:{
+        type:String,
+        required: true 
+    },
+    telegramgrouplink:{
+        type:String, 
+        required:true, 
+    },
+    zoommeetlink:{
+        type:String, 
+        required:true
     }
-
 })
 
 module.exports=mongoose.model('Event',EventSchema); 
