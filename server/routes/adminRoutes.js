@@ -3,6 +3,7 @@ const router=express.Router();
 const Event=require("../models/events"); 
 const Project=require("../models/projects"); 
 
+//api/admin;
 router.get("/",(req,res)=>{
     res.send("I am admin");
 })
@@ -55,6 +56,7 @@ router.get("/project/:id", async(req,res)=>{
 //in frontend we have to show the form using react dom
 router.post("/events", async(req,res) =>{
     req.body; 
+    //save in db 
     res.redirect("/admin/events"); //frontend route 
 })
 
