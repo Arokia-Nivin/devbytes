@@ -37,4 +37,10 @@ router.get("/:date", async (req,res)=>{
     
 }) 
 
+router.get("/event/:id", (req,res)=>{
+    const {id}= req.params;
+    const event = await  Event.findById(id);
+    res.send({event}); 
+
+} ); 
 module.exports=router; 

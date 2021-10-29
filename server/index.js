@@ -1,11 +1,11 @@
 const express=require("express"); 
 const app=express();
 const keys=require("./keys"); 
-
+const methodoverride=require("method-override"); 
 const mongoose=require("mongoose"); 
 mongoose.connect(keys.MONGOURI); 
 
-
+app.use(methodoverride("_method")); 
 app.use(express.urlencoded({extended:true})); 
 app.get("/",(req,res)=>{
     res.send("<h1>website under development</h1>");
