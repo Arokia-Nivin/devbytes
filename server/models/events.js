@@ -15,6 +15,14 @@ const EventSchema= new Schema({
         type:Date, 
         required:true
     },
+    noofdays:{
+        type:Number ,
+        required:true,
+    }, 
+    location:{
+        type:String, 
+        required:true,
+    },
     mode: {
         type: String, 
         required: true 

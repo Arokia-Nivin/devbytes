@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import dayjs from 'dayjs';
 import axios from 'axios';
 import Day from './Day';
@@ -57,7 +57,7 @@ class Calendar extends Component {
             }else {
                 this.setState({ events: res.data.events, eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}` });
             }
-            console.log(this.state.events);
+            
         }catch(err) {
             this.setState({ eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}`})
         }
@@ -80,12 +80,12 @@ class Calendar extends Component {
     renderEvents = () => {
         const { events } = this.state;
 
-        const Events = events.map((evt) => {
+        const Events = events.map((evt, ind) => {
             
             return (
-                <div className="card event-cont w-100">
+                <div key={ind} className="card event-cont w-100">
                     <div className="card-body">
-                        <h5 className="card-title"><Link to={{pathname: `/events/${evt._id}`, aboutProps: {...evt}}}>{evt.title}</Link></h5>
+                        <h5 className="card-title"><NavLink className="details-link" to={`/events/${evt._id}`}>{evt.title}</NavLink></h5>
                         <p className="card-text">{evt.mode}</p>
                     </div>
                 </div>
