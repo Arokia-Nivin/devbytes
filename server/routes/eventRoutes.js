@@ -37,10 +37,17 @@ router.get("/:date", async (req,res)=>{
     
 }) 
 
-router.get("/event/:id", (req,res)=>{
+router.get("/event/:id",  async (req,res)=>{
     const {id}= req.params;
-    const event = await  Event.findById(id);
-    res.send({event}); 
+    try{
+        const event = await  Event.findById(id);
+        res.send({event}); 
+    }
+    catch(err)
+    {
+        res.status(500).send(err);
+    }
+    
 
 } ); 
 module.exports=router; 
