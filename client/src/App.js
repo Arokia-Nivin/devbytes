@@ -6,12 +6,14 @@ import FooterComponent from './components/calendarComponet/FooterComponent';
 import EventsComponent from './components/EventsComponent';
 import ProjectComponent from './components/ProjectComponent';
 import ProjectDetail from './components/ProjectDetail';
+import Home from './components/Home';
 class App extends React.Component {
   render(){
     return (
       <React.Fragment>
         <NavbarComponent/>
         <div className="container-md" style={{marginTop: '70px'}}>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/events" component={Calendar}/>
           <Route exact path="/projects" component={ProjectComponent}/>
           <Route exact path="/events/:id" component={EventsComponent}/>

@@ -1,0 +1,17 @@
+.home-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divs {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.divs:hover {
+    box-shadow:  14px 14px 16px #d9d9d9;
+}
