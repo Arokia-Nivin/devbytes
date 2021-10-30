@@ -1,0 +1,22 @@
+.project-card {
+    color: white;
+    height: 300px;
+}
+.scroll-auto{
+    max-height: 300px;
+    overflow-y: auto;
+}
+.flip-btn{
+    float: right;
+}
+.arrow-btn{
+    position: absolute;
+    margin-top: 20px;
+    margin-right: 30px;
+    top: 0;
+    right: 0;
+}
+.arrow-btn:hover{
+    height: 30px;
+    width: 30px;
+}
