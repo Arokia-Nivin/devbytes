@@ -2,24 +2,26 @@ const AdminJS = require('adminjs')
 const AdminJSExpress = require('@adminjs/express')
 const AdminJSMongoose = require('@adminjs/mongoose')
 const mongoose=require("mongoose");
-AdminJS.registerAdapter(AdminJSMongoose)
 const Event=require("../models/events");
 const Project=require("../models/projects");
+const Contact=require("../models/contacts");
+const keys=require("../keys"); 
 
+AdminJS.registerAdapter(AdminJSMongoose)
 const adminJs = new AdminJS({
   databases: [mongoose],
   rootPath: '/admin',
-  resources:[Event,Project]
+  resources:[Event,Project,Contact]
 })
 const ADMIN={
-    email : "nivinjoseph.a@gmail.com", 
-    password: "hello@123"
+    email : keys.ADMINEMAIL, 
+    password: keys.ADMINPASSWORD
 }
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs,{
-    cookieName:'adminjs', 
-    cookiePassword:"abdcsocsijsfc", 
+    cookieName: keys.COOkIENAME, 
+    cookiePassword: keys.COOKIEPASSWORD, 
     authenticate: async(email,password)=>{
-        if (email==ADMIN.email && password==ADMIN.password)
+        if (email===ADMIN.email && password===ADMIN.password)
         {
             return ADMIN;
         }
