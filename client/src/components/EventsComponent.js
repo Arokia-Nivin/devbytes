@@ -32,7 +32,7 @@ class EventsComponent extends Component {
         const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink, noofdays=1, location='chennai' } = this.state;
        
         return (
-            <React.Fragment>
+            <div className="container-md" style={{marginTop: "40px"}}>
                 <div className="event-detail-header">
                     <NavLink className="links" to="/events"><img alt="back" src="https://img.icons8.com/material-outlined/24/000000/circled-left--v2.png"/>Back</NavLink>
                     <a className="links" rel="noreferrer" target="_blank" href={`https://www.google.com/calendar/render?action=TEMPLATE&sf=true&output=xml&text=${title}&location=${location}&details=${description}&dates=${dayjs(eventdate).format("YYYYMMDD")/dayjs(eventdate + noofdays).format("YYYYMMDD")}`}><img alt="calendar" src="https://img.icons8.com/material-rounded/24/000000/calendar.png"/>Add to calendar</a>
@@ -55,7 +55,7 @@ class EventsComponent extends Component {
                     </div>
 
                 </div>
-            </React.Fragment>
+            </div>
         )
     }
 }

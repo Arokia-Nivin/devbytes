@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import dayjs from 'dayjs';
 import axios from 'axios';
 import Day from './Day';
+import Loading  from '../Loading';
 import { getMonth } from '../../utils';
 
 //CSS
@@ -16,10 +17,12 @@ class Calendar extends Component {
         eventDates: [],
         events: [],
         eventMsg: 'Click on the dates to view events.',
-        eventLoading: false
+        eventLoading: false,
+        calendarLoading: false
     }
     
     async componentDidMount() {
+        this.setState({ calendarLoading: true});
         const res = await axios.get('/api/events/dates');
         const events = res.data.map((evt) => {
             return dayjs(evt.eventdate).format("YYYY-MM-DD");
@@ -30,7 +33,7 @@ class Calendar extends Component {
     }
     
     getMonthDates = () => {
-        this.setState({ month: getMonth(this.state.monthIndex) });
+        this.setState({ month: getMonth(this.state.monthIndex), calendarLoading: false });
     }
     
     incMonthIndex = () => {
@@ -50,16 +53,18 @@ class Calendar extends Component {
     }
 
     getEventsForDate = async (date) => {
+        this.setState({eventLoading: true})
         try {
+            
             const res = await axios.get(`/api/events/${date}`);
             if(res.data.events.length) {
-                this.setState({ events: res.data.events, eventMsg: dayjs(date).format("DD-MM-YYYY") });
+                this.setState({ events: res.data.events, eventMsg: dayjs(date).format("DD-MM-YYYY"), eventLoading: false });
             }else {
-                this.setState({ events: res.data.events, eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}` });
+                this.setState({ events: res.data.events, eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}`, eventLoading: false });
             }
             
         }catch(err) {
-            this.setState({ eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}`})
+            this.setState({ eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}`, eventLoading: false})
         }
         
     }
@@ -109,8 +114,13 @@ class Calendar extends Component {
                         {this.renderCalendar()}
                     </div>
                     <div className="events-container col-lg-7 col-md-12 col-sm-12" style={{marginTop: "20px"}}>
-                        <h4 className="event-msg">{this.state.eventMsg}</h4>
-                        {this.renderEvents()}
+                        {!this.state.eventLoading? (
+                            <>
+                            <h4 className="event-msg">{this.state.eventMsg}</h4>
+                                {this.renderEvents()}
+                            </>
+                            
+                        ):<Loading />}
                     </div>
                 </div>
             </div>
