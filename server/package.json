@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Zoldyck",
   "license": "ISC",
@@ -21,6 +24,7 @@
     "mongoose": "^6.0.12",
     "tslib": "^2.3.1"
   },
+  "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
   "devDependencies": {
     "nodemon": "^2.0.14"
   }
