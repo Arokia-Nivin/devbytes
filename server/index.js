@@ -25,6 +25,8 @@ app.use("/api/events",  eventRoutes);
 const projectRoutes=require("./routes/projectRoutes"); 
 app.use("/api/projects",projectRoutes);
 
+const contactRoutes=require("./routes/contactRoutes");
+app.use("/api/contacts",contactRoutes);
 
 const PORT=5000;
 app.listen(PORT,()=>{
