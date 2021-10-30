@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Calendar from './components/calendarComponet/Calendar';
 import NavbarComponent from './components/NavbarComponent';
-import FooterComponent from './components/calendarComponet/FooterComponent';
+import FooterComponent from './components/FooterComponent';
 import EventsComponent from './components/EventsComponent';
 import ProjectComponent from './components/ProjectComponent';
 import ProjectDetail from './components/ProjectDetail';

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/projectComponent.css';
-import ProjectDetail from './ProjectDetail';
 import axios from "axios";
 export class ProjectComponent extends Component {
     async componentDidMount(){
