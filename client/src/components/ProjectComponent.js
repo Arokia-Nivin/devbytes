@@ -31,7 +31,7 @@ export class ProjectComponent extends Component {
         const projectDisplay=<div className="row mb-5 mb-md-0">{projects.map((item,idx)=> {
         return(
             <div className="col-sm-6 col-md-6 col-lg-6 mb-4 mb-lg-0 mt-5">
-                    <div className="card shadow d-flex flex-column text-dark">
+                    <div className="card project-card shadow d-flex flex-column text-dark">
                     <ReactCardFlip isFlipped={this.state.isFlipped[idx]} flipDirection="horizontal">
                     <div>
                     <div className={`card-front ${this.state.isFlipped[idx]?'':'scroll-auto'}`}>
