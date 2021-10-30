@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import axios from 'axios';
 import "../styles/contact.css";
 class ContactComponent extends Component {
@@ -8,9 +9,13 @@ class ContactComponent extends Component {
     }
 
     async componentDidMount() {
-        const res = await axios.get('/api/contacts');
-        const contacts = res.data.contacts;
-        this.setState({ contacts });
+        try {
+            const res = await axios.get('/api/contacts');
+            const contacts = res.data.contacts;
+            this.setState({ contacts });
+        }catch(err) {
+            this.props.history.push('/')
+        }
     }
 
     renderContact = () => {
@@ -55,4 +60,4 @@ class ContactComponent extends Component {
         )
     }
 }
-export default ContactComponent;
+export default withRouter(ContactComponent);
