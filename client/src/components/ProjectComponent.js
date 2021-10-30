@@ -1,35 +1,43 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/projectComponent.css';
-
 import axios from "axios";
 export class ProjectComponent extends Component {
-    
-    state = {
-        projects: [],
-    }
-    
     async componentDidMount(){
         const res = await axios.get("/api/projects");
         console.log(res);
         const {projects}=res.data; 
-        console.log(projects);
         this.setState({projects});
     }
-
-   
-    
+    state = {
+        projects: [],
+    }
     render() {
-        return (
-            <React.Fragment>
-                <h1 style={{ textAlign: "center", marginTop: "60px", marginBottom: "30px"}}>Our projects</h1>
-                <div className="project-section-container">
-                    {/* {this.renderProjects()} */}
+        const {projects}=this.state;
+        const projectDisplay=projects.map(items => {
+        return(
+            <div>
+            <div className="projects-cont">
+                <Link style={{ textDecoration: "none", color: "black" }} to="/projects/projectdetail">
+                <div className="project-container" className={"status-"+items.status} onClick="projectDetail()">
+                <div className="name-container">
+                <h3 className="project-name">{items.title}</h3><div className="name-ch">{items.status}</div>
                 </div>
-            </React.Fragment>
-        )
-
+                <div className="project-description">{items.description}</div>
+                </div>
+                </Link>
+            </div>
+            </div>
+                );
+        
+            });
+            return projectDisplay;
     }
 
 }
 
 export default ProjectComponent
+
+
+  
+    

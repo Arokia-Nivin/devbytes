@@ -9,7 +9,6 @@ import ProjectDetail from './components/ProjectDetail';
 import Home from './components/Home';
 class App extends React.Component {
   render(){
-    // className="container-md" style={{marginTop: '70px'}}
     return (
       <React.Fragment>
         <NavbarComponent/>
@@ -18,7 +17,7 @@ class App extends React.Component {
           <Route exact path="/projects" component={ProjectComponent}/>
           <Route exact path="/events/:id" component={EventsComponent}/>
           <Route exact path="/projects/:id" component={ProjectDetail}/>
-        {/* <FooterComponent/> */}
+        <FooterComponent/>
       </React.Fragment>
     );
   }

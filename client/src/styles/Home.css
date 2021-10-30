@@ -6,8 +6,9 @@
 
 .active-link {
     background: linear-gradient(310deg,#7928ca,#ff0080);
+    background-clip: text;
     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero {
@@ -18,6 +19,7 @@
 .main-text h1 {
     font-size: 60px;
     background: linear-gradient(310deg,#7928ca,#ff0080);
+    background-clip:text;
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 300;
@@ -124,9 +126,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .main-img img {
-        /* display: none; */
     }
     .main-text h1 {
         font-size: 30px;
