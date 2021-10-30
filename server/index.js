@@ -2,6 +2,8 @@ const express=require("express");
 const app=express();
 const keys=require("./keys"); 
 const path = require('path');
+const cors=require("cors"); 
+app.use(cors());
 
 const mongoose=require("mongoose"); 
 mongoose.connect(keys.MONGOURI); 
