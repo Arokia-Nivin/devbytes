@@ -1,6 +1,6 @@
 const express=require("express"); 
 const app=express();
-const keys=require("./keys"); 
+const keys=require("./config/dev"); 
 const path = require('path');
 const cors=require("cors"); 
 app.use(cors());

@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 const Event=require("../models/events");
 const Project=require("../models/projects");
 const Contact=require("../models/contacts");
-const keys=require("../keys"); 
+const keys=require("../config/dev"); 
 
 AdminJS.registerAdapter(AdminJSMongoose)
 const adminJs = new AdminJS({
@@ -18,7 +18,7 @@ const ADMIN={
     password: keys.ADMINPASSWORD
 }
 const router = AdminJSExpress.buildAuthenticatedRouter(adminJs,{
-    cookieName: keys.COOkIENAME, 
+    cookieName: keys.COOKIENAME, 
     cookiePassword: keys.COOKIEPASSWORD, 
     authenticate: async(email,password)=>{
         if (email===ADMIN.email && password===ADMIN.password)
