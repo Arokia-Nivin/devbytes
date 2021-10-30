@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import dayjs from 'dayjs';
 
@@ -18,13 +18,17 @@ class EventsComponent extends Component {
     }
 
     async componentDidMount() {
-        const { id } = this.props.match.params;
-        const res = await axios.get(`/api/events/event/${id}`);
-        const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink } = res.data.event;
-        this.setState({ 
-            title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink
-         });
-         console.log(this.state);
+        try{
+            const { id } = this.props.match.params;
+            const res = await axios.get(`/api/events/event/${id}`);
+            const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink } = res.data.event;
+            this.setState({ 
+                title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink
+            });
+        }catch(err) {
+            console.log(err);
+            this.props.history.push('/')
+        }
     }
 
     render() {
@@ -60,5 +64,5 @@ class EventsComponent extends Component {
     }
 }
 
-export default EventsComponent;
+export default withRouter(EventsComponent);
 
