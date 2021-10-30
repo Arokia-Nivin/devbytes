@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT=process.env.PORT || 5000 ;
 app.listen(PORT,()=>{
-    if (process.env.ENVIRONMENT!=="production")
+    if (process.env.NODE_ENV!=="production")
     {
         console.log(`listening on port http://localhost:${PORT}/`);
         // require('child_process').exec('start http://localhost:5000/');
