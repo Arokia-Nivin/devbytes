@@ -1,22 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 export class ProjectDetail extends Component {
     state = {
-            name:"project 1",
-            description:"Labore cillum dolore sunt aliquip aliqua labore elit consectetur excepteur minim velit aute. Nostrud commodo voluptate consectetur excepteur culpa cupidatat elit consequat ipsum irure aliquip ex amet adipisicing. Velit cillum aliqua sint labore labore qui enim consequat mollit. Ipsum esse do occaecat incididuntreprehenderit et. Aliquip est magna fugiat irure irure excepteur sunt incididunt fugiat reprehenderit. Dolor aliquip laboris nisi id voluptate occaecat anim aliquip eiusmod eu excepteur. Pariatur exercitation consectetur pariatur mollit duis magna id aute esse enim.",
-            members: ["member1","member2","member3","member4"],
-            guide: "Guideee",
-            status: "active"
-        }
+            title: "",
+            description: "",
+            members: [],
+            guide: "",
+            status: "",
+            requirements: ""
+    }
+    async componentDidMount() {
+        const res = await axios.get(`/api/projects/${this.props.match.params.id}`);
+        
+        const { title, description, members, guide, status, requirements } = res.data.project;
+        this.setState({ title, description, members, guide, status, requirements });
+    }
     render() {
-        const {projects}=this.state;
+            const { title, description, members, guide, status, requirements } = this.state;
             return (
                 <div>
-                    <h1>{this.state.name}</h1>
-                    <div>{this.state.description}</div>
-                    <h2>Members</h2>
-                    <ul>{this.state.members}.map(member)</ul>
-    
+                    <h4 className="card-title" style={{ fontWeight: "700" }}>{title} <span style={{ color: "green", fontWeight: "200"}}>{status}</span></h4>
+                    <span><b>Project description: </b></span>
+                    <p className="card-text">{description}</p>
+                    <span><b>Memebers: </b></span>
+                    {members.map((member) =>{
+                        return <span className="card-text">{member}, </span>
+                    })}
+                    <br/>
+                    <p className="card-text"><b>Guided by: </b>{guide}</p>
+
                 </div>
             )
         

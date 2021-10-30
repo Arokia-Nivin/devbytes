@@ -2,24 +2,23 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {Navbar,Nav,Container} from "react-bootstrap";
 
+import '../styles/Home.css';
+
 function NavbarComponent() {
     return (
-      <div className="NavbarComponent">
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar className="NavbarComponent" collapseOnSelect expand="lg" bg="light" style={{color: "black"}} variant="dark">
         <Container>
-        <Navbar.Brand><NavLink style={{ textDecoration: "none", color: "white" }} to="/">Code-club</NavLink></Navbar.Brand>
+        <Navbar.Brand><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black", fontWeight: "700", fontSize: "26px" }} to="/">{"C{ }de club"}</NavLink></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto"></Nav>
           <Nav className="justify-content-end">
-            <Nav.Link><NavLink style={{ textDecoration: "none", color: "white" }} to="/events">Events</NavLink></Nav.Link>
-            <Nav.Link><NavLink style={{ textDecoration: "none", color: "white" }} to="/projects">Projects</NavLink></Nav.Link>
-            <Nav.Link><NavLink style={{ textDecoration: "none", color: "white" }} to="/contact">Contact</NavLink></Nav.Link>
+            <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/events">Events</NavLink></Nav.Link>
+            <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/contact">Contact</NavLink></Nav.Link>
           </Nav>
         </Navbar.Collapse>
         </Container>
       </Navbar>
-</div>
     )
 }
 
