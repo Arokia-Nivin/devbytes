@@ -2,7 +2,7 @@
 body {
   margin: 0;
   height: 100vh;
-  font-family: Inter,sans-serif;
+  font-family: 'Nunito', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(246, 244, 244) !important;
