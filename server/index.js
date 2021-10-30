@@ -1,7 +1,8 @@
 const express=require("express"); 
 const app=express();
-const keys=require("./keys"); 
-const path = require('path');
+const keys=require("./config/dev"); 
+const cors=require("cors"); 
+app.use(cors());
 
 const mongoose=require("mongoose"); 
 mongoose.connect(keys.MONGOURI); 
@@ -26,12 +27,12 @@ const contactRoutes=require("./routes/contactRoutes");
 app.use("/api/contacts",contactRoutes);
 
 
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-// Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+  app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
