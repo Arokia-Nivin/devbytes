@@ -3,6 +3,7 @@ import Typewriter from "typewriter-effect";
 import hero from '../assets/hero.png';
 import '../styles/Home.css';
 import ProjectComponent from './ProjectComponent';
+import ContactComponent from './ContactComponent';
 
 class Home extends Component {
     render() {
@@ -29,6 +30,9 @@ class Home extends Component {
                 </div>
                 <div className="project-section">
                     <ProjectComponent/>
+                </div>
+                <div className="contact-section" id="contact"> 
+                        <ContactComponent/>
                 </div>
             </React.Fragment>
         )

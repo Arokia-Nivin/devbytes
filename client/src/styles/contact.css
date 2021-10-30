@@ -1,0 +1,15 @@
+.contact-container{
+    margin-top:5%
+}
+.contact-info-container
+{
+    margin-top:5%;
+    display:flex ;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+.contact-info-container img
+{
+    border-radius: 100%;
+}
