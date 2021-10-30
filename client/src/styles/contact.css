@@ -1,3 +1,9 @@
+.contact-header {
+    background: linear-gradient(310deg,#7928ca,#ff0080);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .contact-container{
     margin-top:5%
 }
@@ -9,7 +15,18 @@
     flex-wrap: wrap
 }
 
+.contact-role {
+    background: linear-gradient(310deg,#7928ca,#ff0080);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .contact-info-container img
 {
     border-radius: 100%;
+}
+
+.coordinator-avatar {
+    width: 150px;
 }

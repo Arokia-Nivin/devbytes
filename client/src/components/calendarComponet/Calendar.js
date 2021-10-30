@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import dayjs from 'dayjs';
 import axios from 'axios';
 import Day from './Day';
@@ -64,7 +64,7 @@ class Calendar extends Component {
             }
             
         }catch(err) {
-            this.setState({ eventMsg: `No events on ${dayjs(date).format("DD-MM-YYYY")}`, eventLoading: false})
+            this.props.history.push('/')
         }
         
     }
@@ -128,4 +128,4 @@ class Calendar extends Component {
     }
 }
 
-export default Calendar;
+export default withRouter(Calendar);
