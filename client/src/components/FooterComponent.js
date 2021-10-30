@@ -8,7 +8,7 @@ function FooterComponent() {
             <hr className="horizontal dark mb-4"></hr>
             <div className="row text-center text-md-left">
                 <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 className="mb-4 font-weight-bold">
+                <h5 className="mb-4 font-weight-bold h5">
                     Institution
                 </h5>
                 <p>
@@ -74,7 +74,7 @@ function FooterComponent() {
                 </ul>
                 </div>
                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 className="mb-4 font-weight-bold" >
+                <h5 className="mb-4 font-weight-bold h5" >
                     Address
                 </h5>
                 <p>
@@ -99,7 +99,7 @@ function FooterComponent() {
                 </p>
                 </div>
                 <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 className="mb-4 font-weight-bold" >
+                <h5 className="mb-4 font-weight-bold h5" >
                     Student Coordinators
                 </h5>
                 <p>
@@ -133,7 +133,7 @@ function FooterComponent() {
                 </p>
                 </div>
                 <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 className="mb-4 font-weight-bold">
+                <h5 className="mb-4 font-weight-bold h5">
                     Contact
                 </h5>
                 <p>

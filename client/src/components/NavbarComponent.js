@@ -14,7 +14,9 @@ function NavbarComponent() {
         <Nav className="me-auto"></Nav>
           <Nav className="justify-content-end">
             <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/events">Events</NavLink></Nav.Link>
-            <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/contact">Contact</NavLink></Nav.Link>
+          
+            <a className="ml-2 mt-2" style={{ textDecoration: "none", color: "black" }} href="/admin">Admin</a>
+        
           </Nav>
         </Navbar.Collapse>
         </Container>
