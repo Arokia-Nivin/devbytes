@@ -100,7 +100,7 @@ function FooterComponent() {
                 </div>
                 <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 className="mb-4 font-weight-bold h5" >
-                    Student Coordinators
+                    Teacher Coordinators
                 </h5>
                 <p>
                     <a
@@ -109,7 +109,7 @@ function FooterComponent() {
                     style={{ textDecoration: "none" }}
                     >
                     {" "}
-                    Ganesh{" "}
+                    Dr. B.Latha{" "}
                     </a>
                 </p>
                 <p>
@@ -119,7 +119,7 @@ function FooterComponent() {
                     style={{ textDecoration: "none" }}
                     >
                     {" "}
-                    Nithish Raja
+                    Dr. A.Rajendra prasad
                     </a>
                 </p>
                 <p>
@@ -128,7 +128,7 @@ function FooterComponent() {
                     className="text-black"
                     style={{ textDecoration: "none" }}
                     >
-                    Teja Shree
+                    Dr. K.Palani kumar
                     </a>
                 </p>
                 </div>

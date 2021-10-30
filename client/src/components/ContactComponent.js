@@ -28,13 +28,14 @@ class ContactComponent extends Component {
                     <img className="coordinator-avatar" src="https://img.icons8.com/dotty/150/000000/engineer.png"/>
                     </div>
                     <div className="mt-2" >
-                        <a href={`mailto:${member.mail}`} className="text-black"  style={{ textDecoration: "none" }}> <i className="fas fa-envelope mr-3"/>{member.mail}</a>
-                        <a href={`tel:+91${member.phonenumber}`} className="text-black"  style={{ textDecoration: "none" }}> <i className="fas fa-phone mr-3"/>{member.phonenumber}</a>
+                        <a href={`tel:+91${member.phonenumber}`} title={member.phonenumber} className="text-black"  style={{ textDecoration: "none" }}> <i className="fas fa-phone mr-3"/></a>
+                        <a href={`mailto:${member.email}`} className="text-black" title={member.email}  style={{ textDecoration: "none", marginLeft: "15px" }}> <i className="fas fa-envelope mr-3"/></a>
+                        
                     </div>
                 </div>
             )
         })
-        return memeber
+        return members;
     }
 
     render() {
@@ -46,7 +47,7 @@ class ContactComponent extends Component {
               </h1>
               <hr className="horizontal dark mb-4 container-sm"></hr>
               <div className="contact-info-container">
-                {/* rendercontact */}
+                {this.renderContact()}
                 
               </div>
             </div>
