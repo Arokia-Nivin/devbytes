@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/projectComponent.css';
 import axios from "axios";
 export class ProjectComponent extends Component {
@@ -12,26 +11,16 @@ export class ProjectComponent extends Component {
     state = {
         projects: [],
     }
+    renderProjects = () => {
+
+    }
     render() {
-        const {projects}=this.state;
-        const projectDisplay=projects.map(items => {
-        return(
+        return (
             <div>
-            <div className="projects-cont">
-                <Link style={{ textDecoration: "none", color: "black" }} to="/projects/projectdetail">
-                <div className="project-container" className={"status-"+items.status} onClick="projectDetail()">
-                <div className="name-container">
-                <h3 className="project-name">{items.title}</h3><div className="name-ch">{items.status}</div>
-                </div>
-                <div className="project-description">{items.description}</div>
-                </div>
-                </Link>
+                <h1>Our projects</h1>
+                {/* {this.renderProjects()} */}
             </div>
-            </div>
-                );
-        
-            });
-            return projectDisplay;
+        )
     }
 
 }

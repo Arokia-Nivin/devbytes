@@ -98,18 +98,20 @@ class Calendar extends Component {
 
     render() {
         return (
-            <div className="row events-page-container" style={{ margin: "0 auto" }} >
-                <div className="calendar-container col-lg-4 col-md-6 col-sm-12 me-5">
-                    <div className="calendar-header">
-                        <button onClick={this.decMonthIndex}>{"<"}</button>
-                        <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
-                        <button onClick={this.incMonthIndex}>{">"}</button>
+            <div className="container-md" style={{ marginTop: "70px"}}>
+                <div className="row events-page-container" style={{ margin: "0 auto" }} >
+                    <div className="calendar-container col-lg-4 col-md-6 col-sm-12 me-5">
+                        <div className="calendar-header">
+                            <p style={{ cursor: "Pointer"}} onClick={this.decMonthIndex}><img src="https://img.icons8.com/ios/24/000000/left-squared--v1.png"/></p>
+                            <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
+                            <p style={{ cursor: "Pointer"}} onClick={this.incMonthIndex}><img src="https://img.icons8.com/ios/24/000000/right-squared--v1.png"/></p>
+                        </div>
+                        {this.renderCalendar()}
                     </div>
-                    {this.renderCalendar()}
-                </div>
-                <div className="events-container col-lg-7 col-md-12 col-sm-12" style={{marginTop: "20px"}}>
-                    <h4 className="event-msg">{this.state.eventMsg}</h4>
-                    {this.renderEvents()}
+                    <div className="events-container col-lg-7 col-md-12 col-sm-12" style={{marginTop: "20px"}}>
+                        <h4 className="event-msg">{this.state.eventMsg}</h4>
+                        {this.renderEvents()}
+                    </div>
                 </div>
             </div>
         )
