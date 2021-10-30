@@ -1,42 +1,22 @@
-.project-section-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.card {
+    color: white;
+    height: 300px;
 }
-.project-card {
-    box-shadow:  7px 7px 23px #810f83;
-    margin-right: 30px;
-    margin-top: 30px;
+.scroll-auto{
+    max-height: 300px;
+    overflow-y: auto;
 }
-.card-flip {
-    position: relative;
-    width: 400px ;
+.flip-btn{
+    float: right;
 }
-
-.card-flip > div {
-    backface-visibility: hidden;
-    transition: transform 300ms;
-    transition-timing-function: linear;
-  }
-
-.card-front {
-    transform: rotateY(0deg);
-  }
-  
-  .card-back {
-    transform: rotateY(180deg);
+.arrow-btn{
     position: absolute;
+    margin-top: 20px;
+    margin-right: 30px;
     top: 0;
-    width: 100%;
-    background-color: #fff;
-    color: black;
-  }
-
-  .card-flip:hover .card-front {
-    transform: rotateY(-180deg);
-  }
-    
-  .card-flip:hover .card-back {
-    transform: rotateY(0deg);
-  }
+    right: 0;
+}
+.arrow-btn:hover{
+    height: 30px;
+    width: 30px;
+}
