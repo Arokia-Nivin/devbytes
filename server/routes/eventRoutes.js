@@ -14,7 +14,7 @@ router.get("/dates", async(req,res)=>{
 })
 router.get("/upcomingevents", async (req,res)=>{
     try{
-        const events=await Event.find({"eventdate":{"$gte": Date.now()}}).sort({"eventdate":1}).limit(3); 
+        const events=await Event.find({"eventdate":{"$gte": Date.now()}}).sort({"eventdate":1}); 
         res.send({events}); 
     }
     catch(err)
