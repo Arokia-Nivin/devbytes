@@ -88,10 +88,14 @@ class Calendar extends Component {
         const Events = events.map((evt, ind) => {
             
             return (
-                <div key={ind} className="card event-cont w-100">
+                <div key={ind} className="card event-cont w-100" style={{ borderRadius: "10px"}}>
+                    
                     <div className="card-body">
-                        <h5 className="card-title"><NavLink className="details-link" to={`/events/${evt._id}`}>{evt.title}</NavLink></h5>
-                        <p className="card-text">{evt.mode}</p>
+                        <div style={{display: "flex", justifyContent: "space-between"}}>
+                            <h5 className="card-title"><NavLink className="details-link" to={`/events/${evt._id}`}>{evt.title}</NavLink></h5>
+                            <img src={this.props[evt.eventtype]} />
+                        </div>
+                        <p className="card-text"><b>Mode: </b>{evt.mode}</p>
                     </div>
                 </div>
             )
@@ -104,9 +108,6 @@ class Calendar extends Component {
     render() {
         return (
             <div className="container-md" style={{ marginTop: "30px"}}>
-                {/* <div className="upcoming-container mb-3">
-                    <p className="upcoming-link">up coming events</p>
-                </div> */}
                 <div className="row events-page-container" style={{ margin: "30px auto" }} >
                     <div className="calendar-container col-lg-4 col-md-6 col-sm-12 me-5">
                         <div className="calendar-header">
@@ -129,6 +130,15 @@ class Calendar extends Component {
             </div>
         )
     }
+}
+
+Calendar.defaultProps = {
+    webinar: 'https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/50/000000/external-webinar-health-education-inipagistudio-mixed-inipagistudio.png',
+    technicalevent: 'https://img.icons8.com/cotton/50/000000/computer.png',
+    nontechnicalevent: 'https://img.icons8.com/color/50/000000/hand-with-pen.png',
+    hackathon: 'https://img.icons8.com/cotton/50/000000/computer.png',
+    ideathon: 'https://img.icons8.com/color/50/000000/idea.png',
+    workshop: 'https://img.icons8.com/officexs/50/000000/accessibility-tools.png'
 }
 
 export default withRouter(Calendar);
