@@ -13,17 +13,18 @@ class EventsComponent extends Component {
         registrationformurl: '',
         mode: '',
         whatsappgrouplink: '',
-        zoommeetlink: '',
-        telegramgrouplink: ''
+        meetlink: '',
+        telegramgrouplink: '',
+        posterurl: ''
     }
 
     async componentDidMount() {
         try{
             const { id } = this.props.match.params;
             const res = await axios.get(`/api/events/event/${id}`);
-            const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink } = res.data.event;
+            const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, meetlink, telegramgrouplink, posterurl } = res.data.event;
             this.setState({ 
-                title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink
+                title, description, eventdate, registrationformurl, mode, whatsappgrouplink, meetlink, telegramgrouplink, posterurl
             });
         }catch(err) {
             console.log(err);
@@ -33,7 +34,7 @@ class EventsComponent extends Component {
 
     render() {
 
-        const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, zoommeetlink, telegramgrouplink, noofdays=1, location='chennai' } = this.state;
+        const { title, description, eventdate, registrationformurl, mode, whatsappgrouplink, meetlink, telegramgrouplink, noofdays=1, location='chennai', posterurl } = this.state;
        
         return (
             <div className="container-md" style={{marginTop: "40px"}}>
@@ -43,18 +44,18 @@ class EventsComponent extends Component {
                 </div>
                 <div className="event-detail-container">
                     <div className="img-cont" style={{width: "100%", maxWidth: "400px"}}>
-                        <img alt="poster" className="card-img-top img" src="https://media-exp1.licdn.com/dms/image/C5622AQGVP1r02ixVAg/feedshare-shrink_1280/0/1635225610626?e=1638403200&v=beta&t=E74a6cf8BLLqchuPGAyPnOoWV-XRzKnoAAS-a49uDKY"/>
+                        <img alt="poster" className="card-img-top img" src={posterurl}/>
                     </div>
                     <div style={{width: "100%", maxWidth: "500px"}}>
                         <div className="card-body" >
-                            <h5 className="card-title" style={{ fontWeight: "800"}}>{title}</h5>
-                            <h6 className="card-title">Event on: { dayjs(eventdate).format("DD-MM-YYYY") }</h6>
+                            <h5 className="card-title" style={{ fontWeight: "800", background: "linear-gradient(310deg,#7928ca,#ff0080)",backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}}>{title}</h5>
+                            <p className="card-title"><b>Event on: { dayjs(eventdate).format("DD-MM-YYYY") }</b></p>
                             <p className="card-text">{description}</p>
                             <p className="card-text"><b>Mode: </b>{mode}</p>
                             <p className="card-text"><b>Registeration Link: </b><a target="_blank" rel="noreferrer" href={registrationformurl}>{registrationformurl}</a></p>
                             <p className="card-text"><b>Join our whatsapp group: </b><a target="_blank" rel="noreferrer" href={whatsappgrouplink}>{whatsappgrouplink}</a></p>
                             <p className="card-text"><b>Join our Telegram group: </b><a target="_blank" rel="noreferrer" href={telegramgrouplink}>{telegramgrouplink}</a></p>
-                            <p className="card-text"><b>Zoom meet link: </b><a target="_blank" rel="noreferrer" href={zoommeetlink}>{zoommeetlink}</a></p>
+                            <p className="card-text"><b>Meet link: </b><a target="_blank" rel="noreferrer" href={meetlink}>{meetlink}</a></p>
                         </div>
                     </div>
 

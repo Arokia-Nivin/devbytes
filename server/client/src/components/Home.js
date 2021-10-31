@@ -13,14 +13,15 @@ class Home extends Component {
                 <div className="hero">
                     <div className="main-text">
                         <h1>CODE CLUB</h1>
+                        <div style={{ fontWeight: "700",fontSize: "20px"}}>
                         <Typewriter
                             options={{
-                                
                                 strings: ["Learn | Work | Discover - Together!"],
                                 autoStart: true,
                                 loop: true,
                             }}
                         />
+                        </div>
                             <a className="hero-btn" href="#contact">contact us</a>
                     </div>
                     <div className="main-img">

@@ -15,13 +15,13 @@ class ProjectComponent extends Component {
 
     async componentDidMount() {
         try{
-            const res = await axios.get("/api/projects");
             if(this.props.match.path === "/" && this.props.match.path !== "/home") {
-
-                const [a,b,c,d] = res.data.projects;
-                this.setState({ projects: [a,b,c,d] });
+                const res = await axios.get("/api/projects?limit=2");
+                const [a,b] = res.data.projects;
+                this.setState({ projects: [a,b] });
                 
             }else {
+                const res = await axios.get("/api/projects");
                 const { projects } = res.data;
                 this.setState({ projects });
             } 
@@ -39,8 +39,15 @@ class ProjectComponent extends Component {
         return Projects;
     }
 
-    handleChange = evt => {
+    handleChange = async (evt) => {
         this.setState({selected: evt.target.value});
+        try {
+            const res = await axios.get(`/api/projects/status/${evt.target.value}`);
+            const { projects } = res.data;
+            this.setState({ projects });
+        }catch(err) {
+            this.props.history.push('/');
+        }
     }
 
     render() {
@@ -51,10 +58,10 @@ class ProjectComponent extends Component {
                 (
                     <>
                     <h1 className="mb-2" style={{ textAlign: "center", background: "linear-gradient(310deg,#7928ca,#ff0080)",backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}}>Our projects</h1>
-                    <select className="form-select mr-sm-2" onChange={(e)=>this.setState({selected: e.target.value})}>
-                        <option value="all">All</option>
-                        <option value="active">Active</option>
-                        <option value="completed">Completed</option>
+                    <select className="form-select mr-sm-2" onChange={this.handleChange}>
+                        <option value="All">All</option>
+                        <option value="Active">Active</option>
+                        <option value="Completed">Completed</option>
                     </select>
                     </>
                 ) }
