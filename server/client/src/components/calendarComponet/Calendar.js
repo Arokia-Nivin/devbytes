@@ -107,9 +107,9 @@ class Calendar extends Component {
                 <div className="row events-page-container" style={{ margin: "0 auto" }} >
                     <div className="calendar-container col-lg-4 col-md-6 col-sm-12 me-5">
                         <div className="calendar-header">
-                            <p style={{ cursor: "Pointer"}} onClick={this.decMonthIndex}><img src="https://img.icons8.com/ios/24/000000/left-squared--v1.png"/></p>
+                            <p style={{ cursor: "Pointer"}} onClick={this.decMonthIndex}><img alt="left" src="https://img.icons8.com/ios/24/000000/left-squared--v1.png"/></p>
                             <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
-                            <p style={{ cursor: "Pointer"}} onClick={this.incMonthIndex}><img src="https://img.icons8.com/ios/24/000000/right-squared--v1.png"/></p>
+                            <p style={{ cursor: "Pointer"}} onClick={this.incMonthIndex}><img alt="right" src="https://img.icons8.com/ios/24/000000/right-squared--v1.png"/></p>
                         </div>
                         {this.renderCalendar()}
                     </div>
