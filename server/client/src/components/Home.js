@@ -36,11 +36,12 @@ class Home extends Component {
                     <h1 className="mb-2" style={{ textAlign: "center"}}>Our projects</h1>
                    
                         <ProjectComponent/>
-                        <Link to="/projects" className="projects-view-link">view more</Link>
+                        <Link to="/projects" className="more-projects view-more-link">view more</Link>
                     </div>
                 </>
                 <div className="contact-section" id="contact"> 
                         <ContactComponent/>
+                        <div style={{display: "flex", justifyContent: "center", marginTop: "50px"}}><Link to="/aboutus" className="abt-us view-more-link">more about us</Link></div>
                 </div>
             </React.Fragment>
         )

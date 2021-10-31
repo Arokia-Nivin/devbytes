@@ -15,6 +15,7 @@ function NavbarComponent() {
         <Nav className="me-auto"></Nav>
           <Nav className="justify-content-end">
           <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/home">Home</NavLink></Nav.Link>
+          <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/aboutus">About us</NavLink></Nav.Link>
           <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/projects">Projects</NavLink></Nav.Link>
             <NavDropdown title="Events"style={{background: "black", backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}}>
               <NavDropdown.Item><NavLink style={{background: "black", backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}} to="/events">Calendar</NavLink></NavDropdown.Item>

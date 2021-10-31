@@ -197,7 +197,7 @@
     font-weight: 300;
 }
 
-.projects-view-link {
+.more-projects {
     color: #ffffff;
     text-decoration: none;
     padding: 5px;
@@ -209,8 +209,28 @@
     transition: all .3s ease-in-out;
 }
 
-
-.projects-view-link:hover {
+.more-projects:hover {
     color: #111;
     background-position: left bottom;
+}
+
+
+
+.abt-us {
+    color: #111;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid #111;
+    font-variant: small-caps;
+
+    background: linear-gradient(to right, #7928ca 50%, rgba(0,0,0,0) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-in-out;
+}
+
+.abt-us:hover {
+    color: #fff;
+    background-position: left bottom;
+    
 }

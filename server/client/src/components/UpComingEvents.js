@@ -47,8 +47,8 @@ class UpComingEvents extends Component {
     render() {
         return (
             <>
-                <h2 style={{ textAlign: "center", marginTop: "30px"}}>Upcoming Events</h2>
-                <div className="quotes"><em>"lorem ipsum"</em></div>
+                <h2 style={{ textAlign: "center", marginTop: "30px",  background: "linear-gradient(310deg,#7928ca,#ff0080)",backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}}>Upcoming Events</h2>
+                <div className="quotes"><em>"Sometimes later becomes never. Register now"</em></div>
                 <div className="upcoming-events-container container-md">
                     {this.renderUpcomingEvents()}
                 </div>
