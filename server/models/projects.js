@@ -18,16 +18,21 @@ const ProjectSchema= new Schema({
     },
     guide:{
         type:String, 
-        required: true
+        required: true,
+        default : 'Dr. k Latha',
     },
-    requirements:{
+    domain:{
         type:String, 
-        required:true 
+        required :true,
+        enum : ['webdevelopment', 'appdevelopment','iot','machinelearning','coding'],
+        default:'coding'
     },
 
     status:{
         type:String, 
         required: true, 
+        default: 'active', 
+        enum: ['active', 'completed'],
     }, 
    
 })
