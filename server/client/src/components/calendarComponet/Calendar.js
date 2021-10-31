@@ -103,8 +103,11 @@ class Calendar extends Component {
 
     render() {
         return (
-            <div className="container-md" style={{ marginTop: "70px"}}>
-                <div className="row events-page-container" style={{ margin: "0 auto" }} >
+            <div className="container-md" style={{ marginTop: "30px"}}>
+                {/* <div className="upcoming-container mb-3">
+                    <p className="upcoming-link">up coming events</p>
+                </div> */}
+                <div className="row events-page-container" style={{ margin: "30px auto" }} >
                     <div className="calendar-container col-lg-4 col-md-6 col-sm-12 me-5">
                         <div className="calendar-header">
                             <p style={{ cursor: "Pointer"}} onClick={this.decMonthIndex}><img alt="left" src="https://img.icons8.com/ios/24/000000/left-squared--v1.png"/></p>

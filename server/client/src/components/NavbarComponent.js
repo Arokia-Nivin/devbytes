@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {Navbar,Nav,Container} from "react-bootstrap";
+import {Navbar,Nav,Container, NavDropdown} from "react-bootstrap";
 
 import '../styles/Home.css';
 
@@ -15,8 +15,12 @@ function NavbarComponent() {
         <Nav className="me-auto"></Nav>
           <Nav className="justify-content-end">
           <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/home">Home</NavLink></Nav.Link>
-          <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/events">Events</NavLink></Nav.Link>
           <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/projects">Projects</NavLink></Nav.Link>
+            <NavDropdown title="Events"style={{background: "black", backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}}>
+              <NavDropdown.Item><NavLink style={{background: "black", backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}} to="/events">Calendar</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink style={{background: "black", backgroundClip: "text",WebkitBackgroundClip: "text",WebkitTextFillColor: "transparent"}} to="/events/upcoming">Upcoming</NavLink></NavDropdown.Item>
+            </NavDropdown>
+          
           </Nav>
         </Navbar.Collapse>
         </Container>
