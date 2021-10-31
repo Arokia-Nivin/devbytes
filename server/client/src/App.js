@@ -15,6 +15,7 @@ class App extends React.Component {
         <NavbarComponent/>
         <Switch>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/home" component={Home}/>
             <Route exact path="/events" component={Calendar}/>
             <Route exact path="/projects" component={ProjectComponent}/>
             <Route exact path="/events/:id" component={EventsComponent}/>
