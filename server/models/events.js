@@ -51,6 +51,11 @@ const EventSchema= new Schema({
     meetlink:{
         type:String, 
         required:true
+    }, 
+    eventtype:
+    {
+        type:String, 
+        enum:["webinar", "workshop", "technicalevent", "nontechnicalevent", "hackathon", "ideathon"],
     }
 })
 

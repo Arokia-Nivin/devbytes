@@ -12,6 +12,18 @@ router.get("/dates", async(req,res)=>{
         res.status(500).send(err);
     }
 })
+router.get("/upcomingevents", async (req,res)=>{
+    try{
+        const events=await Event.find({"eventdate":{"$gte": Date.now()}}).limit(3); 
+        res.send({events}); 
+    }
+    catch(err)
+    {
+        res.staus(500).send({err})
+    }
+    
+
+})
 
 
 router.get("/:date", async (req,res)=>{
@@ -50,4 +62,6 @@ router.get("/event/:id",  async (req,res)=>{
     
 
 } ); 
+
+
 module.exports=router; 
