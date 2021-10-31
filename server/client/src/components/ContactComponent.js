@@ -22,7 +22,7 @@ class ContactComponent extends Component {
         const { contacts } = this.state;
         const members = contacts.map((member,ind) => {
             return (
-                <div className="p-2 text-center contact-info">
+                <div key={ind} className="p-2 text-center contact-info">
                     <h3>
                         {member.name}
                     </h3>
@@ -30,7 +30,7 @@ class ContactComponent extends Component {
                         {member.role}
                     </h4>
                     <div> 
-                    <img className="coordinator-avatar" src="https://img.icons8.com/dotty/150/000000/engineer.png"/>
+                    <img alt="avatar" className="coordinator-avatar" src="https://img.icons8.com/dotty/150/000000/engineer.png"/>
                     </div>
                     <div className="mt-2" >
                         <a href={`tel:+91${member.phonenumber}`} title={member.phonenumber} className="text-black"  style={{ textDecoration: "none" }}> <i className="fas fa-phone mr-3"/></a>

@@ -6,7 +6,7 @@ class NotFound extends Component {
     render() {
         return (
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
-                <img width="60%" src={notFound}/>
+                <img alt="notfound" width="60%" src={notFound}/>
                 <Link to="/">Back to home page</Link>
             </div>
         )
