@@ -17,7 +17,11 @@ const adminJs = new AdminJS({
   databases: [mongoose],
   rootPath: '/admin',
   logoutPath: '/home',
-  resources:[Event,Project,Contact],
+  resources:[
+    {resource:  Project, options: { listProperties: ['title', 'domain', 'year'] }},
+    {resource: Contact, options: { listProperties: ['name', 'role'] } }, 
+    {resource:  Event, options: { listProperties: ['title', 'eventdate', 'eventtype'] }},  
+  ],
   branding:{
     logo:`https://img.icons8.com/office/80/000000/control-panel.png`,
     softwareBrothers: false,
@@ -27,8 +31,8 @@ const adminJs = new AdminJS({
   locale: {
     translations: {
         labels: {
-            loginWelcome: 'Code Club', // this could be your project name
-            navigation : 'Select a collection',
+            loginWelcome: 'Code Club',
+            navigation : 'Code Club DATABASE',
             
         },
         messages:{
@@ -53,7 +57,7 @@ const adminJs = new AdminJS({
           foundBug_subtitle: '',
           needMoreSolutions_title: '',
           needMoreSolutions_subtitle: '',
-          invalidCredentials: 'Wrong admin email and/or admin password ',
+          invalidCredentials: 'Wrong Admin Email and/or Admin Password',
         }
 
     },
