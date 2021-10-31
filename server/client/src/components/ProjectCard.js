@@ -9,7 +9,7 @@ class ProjectCard extends Component {
 
     render() {
         
-        const { title, description, status, members, guide, domain='coding' } = this.props;
+        const { title, description, status, members, guide, domain='coding', year } = this.props;
         const Members = members.map((member, ind) => {
             return <span style={{color: "#506D84"}} key={ind}>{member},  </span>
         })
@@ -32,6 +32,9 @@ class ProjectCard extends Component {
                 </div>
                 <div>
                     <b>Guided by: </b>{guide}
+                </div>
+                <div>
+                    <b>Year: </b>{year}
                 </div>
             </div>
         )

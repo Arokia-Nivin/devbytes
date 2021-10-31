@@ -15,7 +15,7 @@ class ProjectComponent extends Component {
 
     async componentDidMount() {
         try{
-            if(this.props.match.path === "/" && this.props.match.path !== "/home") {
+            if(this.props.match.path === "/" || this.props.match.path === "/home") {
                 const res = await axios.get("/api/projects?limit=2");
                 const [a,b] = res.data.projects;
                 this.setState({ projects: [a,b] });
