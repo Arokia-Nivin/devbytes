@@ -1,3 +1,4 @@
+
 const AdminJS = require('adminjs')
 const AdminJSExpress = require('@adminjs/express')
 const AdminJSMongoose = require('@adminjs/mongoose')
@@ -6,9 +7,13 @@ const Event=require("../models/events");
 const Project=require("../models/projects");
 const Contact=require("../models/contacts");
 const keys=require("../keys"); 
+
   
 AdminJS.registerAdapter(AdminJSMongoose)
 const adminJs = new AdminJS({
+  dashboard: {
+    component: AdminJS.bundle('../client/src/components/admindashboard'),
+  },
   databases: [mongoose],
   rootPath: '/admin',
   logoutPath: '/home',
@@ -21,16 +26,38 @@ const adminJs = new AdminJS({
   },
   locale: {
     translations: {
-        messages: {
-            loginWelcome: 'Administration Panel of Sairam Code Club' // the smaller text
-        },
         labels: {
             loginWelcome: 'Code Club', // this could be your project name
+            navigation : 'Select a collection',
+            
         },
+        messages:{
+          welcomeOnBoard_title: '',
+          welcomeOnBoard_subtitle: '',
+          loginWelcome: 'Welcome to Sairam Code Club Admin Panel',
+          addingResources_title: '',
+          addingResources_subtitle: '',
+          customizeResources_title: '',
+          customizeResources_subtitle: '',
+          customizeActions_title: '',
+          customizeActions_subtitle: '',
+          writeOwnComponents_title: '',
+          writeOwnComponents_subtitle: '',
+          customDashboard_title: '',
+          customDashboard_subtitle: '',
+          roleBasedAccess_title: '',
+          roleBasedAccess_subtitle: '',
+          community_title: '',
+          community_subtitle: '',
+          foundBug_title: '',
+          foundBug_subtitle: '',
+          needMoreSolutions_title: '',
+          needMoreSolutions_subtitle: '',
+          invalidCredentials: 'Wrong admin email and/or admin password ',
+        }
+
     },
-    dashboard: {
-      component: AdminJS.bundle('../client/src/components/dashboard'),
-   },
+ 
 },
 })
 const ADMIN={
