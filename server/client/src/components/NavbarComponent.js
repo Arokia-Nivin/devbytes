@@ -16,6 +16,7 @@ function NavbarComponent() {
           <Nav className="justify-content-end">
           <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/home">Home</NavLink></Nav.Link>
           <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/events">Events</NavLink></Nav.Link>
+          <Nav.Link><NavLink activeClassName="active-link" style={{ textDecoration: "none", color: "black" }} to="/projects">Projects</NavLink></Nav.Link>
           </Nav>
         </Navbar.Collapse>
         </Container>
