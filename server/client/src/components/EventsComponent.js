@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink, withRouter,  } from 'react-router-dom';
 import axios from 'axios';
 import dayjs from 'dayjs';
 
@@ -19,6 +19,7 @@ class EventsComponent extends Component {
     }
 
     async componentDidMount() {
+        console.log(this.props.location)
         try{
             const { id } = this.props.match.params;
             const res = await axios.get(`/api/events/event/${id}`);
@@ -39,7 +40,7 @@ class EventsComponent extends Component {
         return (
             <div className="container-md" style={{marginTop: "40px"}}>
                 <div className="event-detail-header">
-                    <NavLink className="links" to="/events"><img alt="back" src="https://img.icons8.com/material-outlined/24/000000/circled-left--v2.png"/>Back</NavLink>
+                    <a onClick={() => this.props.history.goBack()} className="links"><img alt="back" src="https://img.icons8.com/material-outlined/24/000000/circled-left--v2.png"/>Back</a>
                     <a className="links" rel="noreferrer" target="_blank" href={`https://www.google.com/calendar/render?action=TEMPLATE&sf=true&output=xml&text=${title}&location=${location}&details=${description}&dates=${dayjs(eventdate).format("YYYYMMDD")/dayjs(eventdate + noofdays).format("YYYYMMDD")}`}><img alt="calendar" src="https://img.icons8.com/material-rounded/24/000000/calendar.png"/>Add to calendar</a>
                 </div>
                 <div className="event-detail-container">

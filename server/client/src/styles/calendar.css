@@ -27,6 +27,7 @@
 
 .event-msg {
     color: #757575;
+    font-weight: 700;
 }
 .event-cont {
     border-radius: 10px;
@@ -38,8 +39,7 @@
 .event {
     background-color: #c5b8d3;
     border-radius: 20px;
-    border-right: 2px solid white;
-    border-left: 2px solid white;
+    border: 2px solid white;
     cursor: pointer;
 }
 .event:hover {
@@ -74,15 +74,19 @@
 } 
 
 .details-link {
-    color: #000;
+    background: linear-gradient(310deg,#7928ca,#ff0080);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
+    font-weight: 700;
 }
 
 .details-link:hover {
-    background: linear-gradient(310deg,#7928ca,#ff0080);
-    background-clip:text;
+    background: linear-gradient(310deg,#000,#000);
+    background-clip: text;
     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -115,8 +119,9 @@ img.img {
 .upcoming-events-container {
     display: flex;
     justify-content: center;
-    height: 60vh;
+    margin-bottom: 30px;
     align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .upcoming-event-cont {
@@ -153,6 +158,9 @@ img.img {
 .upcoming-event-header h5 {
     text-align: center;
     margin: 10px 0 10px;
+}
+.quotes {
+    text-align: center;
 }
 
 

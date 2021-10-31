@@ -29,7 +29,7 @@ class UpComingEvents extends Component {
         const UpcomingEvents = events.map((event, ind) => {
             return (
                 <div key={ind} className="upcoming-event-cont">
-                    <img src="https://img.icons8.com/cotton/54/000000/computer.png"/>
+                    <img src={this.props[event.eventtype]}/>
                     <div className="upcoming-event-header">
                         <h5 className=""><NavLink className="upcoming-details-link" to={`/events/${event._id}`}><b>{event.title}</b></NavLink></h5>
                         <div style={{ display: "flex", justifyContent: "space-around"}}>
@@ -48,6 +48,7 @@ class UpComingEvents extends Component {
         return (
             <>
                 <h2 style={{ textAlign: "center", marginTop: "30px"}}>Upcoming Events</h2>
+                <div className="quotes"><em>"lorem ipsum"</em></div>
                 <div className="upcoming-events-container container-md">
                     {this.renderUpcomingEvents()}
                 </div>
@@ -55,4 +56,14 @@ class UpComingEvents extends Component {
         )
     }
 }
+
+UpComingEvents.defaultProps = {
+    webinar: 'https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/64/000000/external-webinar-health-education-inipagistudio-mixed-inipagistudio.png',
+    technicalevent: 'https://img.icons8.com/cotton/54/000000/computer.png',
+    nontechnicalevent: 'https://img.icons8.com/color/54/000000/hand-with-pen.png',
+    hackathon: 'https://img.icons8.com/cotton/54/000000/computer.png',
+    ideathon: 'https://img.icons8.com/color/48/000000/idea.png',
+    workshop: 'https://img.icons8.com/officexs/50/000000/accessibility-tools.png'
+}
+
 export default withRouter(UpComingEvents);

@@ -202,28 +202,15 @@
     text-decoration: none;
     padding: 5px;
     border: 1px solid white;
-    position: relative;
+
+    background: linear-gradient(to right, #fff 50%, rgba(0,0,0,0) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-in-out;
 }
 
-.projects-view-link::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: -1;
-    transition: -webkit-transform 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in, -webkit-transform 0.2s ease-in;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: left;
-    transform-origin: left;
-}
 
 .projects-view-link:hover {
-    color: #fff;
-    transform: scaleX(1);
+    color: #111;
+    background-position: left bottom;
 }
