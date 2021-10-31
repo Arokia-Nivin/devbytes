@@ -34,7 +34,10 @@ const ProjectSchema= new Schema({
         default: 'active', 
         enum: ['active', 'completed'],
     }, 
-   
+   year:{
+       type:String, 
+       default: '2021',
+   }
 })
 
 module.exports=mongoose.model('Projects',ProjectSchema); 
