@@ -25,3 +25,11 @@
       background-position: 160px;
     }
   }
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
