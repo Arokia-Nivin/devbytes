@@ -122,7 +122,7 @@ class Calendar extends Component {
                             <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
                             <p style={{ cursor: "Pointer"}} onClick={this.incMonthIndex}><img alt="right" src="https://img.icons8.com/ios/24/000000/right-squared--v1.png"/></p>
                         </div>
-                        {!this.state.calendarLoading? this.renderCalendar() : this.renderLoader()};
+                        {!this.state.calendarLoading? this.renderCalendar() : this.renderLoader()}
                     </div>
                     <div className="events-container col-lg-7 col-md-12 col-sm-12" style={{marginTop: "20px"}}>
                         {!this.state.eventLoading? (
