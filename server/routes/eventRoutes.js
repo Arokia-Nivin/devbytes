@@ -1,4 +1,5 @@
 const express=require("express"); 
+const events = require("../models/events");
 const router=express.Router(); 
 const Event=require("../models/events"); 
 
@@ -26,13 +27,47 @@ router.get("/upcomingevents", async (req,res)=>{
 })
 
 
+// router.get("/:date", async (req,res)=>{
+//     const date= new Date(req.params.date);
+//     const isValidDate= (date !== "Invalid Date" && !isNaN(date));
+//     if (isValidDate)
+//     {
+//         try{
+//             const events = await  Event.find({eventdate:date});
+//             res.send({events});
+//         }
+//         catch(err)
+//         {
+//             res.status(500).send(err);
+//         }
+
+//     }
+//     else 
+//     {
+//         //incorrect request body 
+//         res.status(400).send("Invalid Date");
+//     }
+    
+// }) 
+
+
 router.get("/:date", async (req,res)=>{
     const date= new Date(req.params.date);
     const isValidDate= (date !== "Invalid Date" && !isNaN(date));
     if (isValidDate)
     {
         try{
-            const events = await  Event.find({eventdate:date});
+            const tempevents = await  Event.find({});
+            let events=[];
+            for (let e of tempevents)
+            {
+                const d=e.eventdate; 
+                if (d.getMonth()===date.getMonth() && d.getDate()===date.getDate() &&
+                 d.getFullYear()===date.getFullYear())  
+                {
+                    events.push(e); 
+                }      
+            }
             res.send({events});
         }
         catch(err)
