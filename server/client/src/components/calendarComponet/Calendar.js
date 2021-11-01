@@ -8,7 +8,7 @@ import { getMonth } from '../../utils';
 
 //CSS
 import '../../styles/calendar.css';
-
+import '../../styles/Loading.css';
 class Calendar extends Component {
 
     state = {
@@ -81,6 +81,13 @@ class Calendar extends Component {
         )
         return calendar;
     }
+    renderLoader = () => {
+        return (<div className="text-center loader">
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
+        </div>);
+    }
 
     renderEvents = () => {
         const { events } = this.state;
@@ -115,7 +122,7 @@ class Calendar extends Component {
                             <h3>{dayjs(new Date(dayjs().year(), this.state.monthIndex)).format("MMMM YYYY")}</h3>
                             <p style={{ cursor: "Pointer"}} onClick={this.incMonthIndex}><img alt="right" src="https://img.icons8.com/ios/24/000000/right-squared--v1.png"/></p>
                         </div>
-                        {this.renderCalendar()}
+                        {!this.state.calendarLoading? this.renderCalendar() : this.renderLoader()};
                     </div>
                     <div className="events-container col-lg-7 col-md-12 col-sm-12" style={{marginTop: "20px"}}>
                         {!this.state.eventLoading? (
