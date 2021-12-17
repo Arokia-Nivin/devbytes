@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# Code Club website 
+# Code club website 
 
 This website is made with React-Node and Admin JS for admin Panel for Sri Sairam Engineering College. 
 
